@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS mama_fua_services;
+"CREATE DATABASE IF NOT EXISTS mama_fua_services;
 USE mama_fua_services;
 
 CREATE TABLE IF NOT EXISTS users (

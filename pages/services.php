@@ -20,6 +20,7 @@ $services = $stmt->fetchAll();
   <div class="page">
     <h1>Our Services</h1>
     <p>Book trusted cleaning services with flexible scheduling.</p>
+    <p>Want to see our package pricing? <a href="pricing.php">View pricing details</a> on this page.</p>
     <div class="service-list">
       <?php foreach ($services as $service): ?>
         <article class="service-item">

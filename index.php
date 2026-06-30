@@ -27,15 +27,11 @@ $settings = $stmt->fetch();
         <a href="index.php">Home</a>
         <a href="pages/about.php">About</a>
         <a href="pages/services.php">Services</a>
-        <a href="pages/pricing.php">Pricing</a>
-        <a href="pages/contact.php">Contact</a>
-        <a href="pages/blog.php">Blog</a>
         <?php if (is_logged_in()): ?>
           <a href="pages/dashboard.php">Dashboard</a>
           <a href="auth/logout.php">Logout</a>
         <?php else: ?>
-          <a href="auth/login.php">Login</a>
-          <a href="auth/register.php">Register</a>
+          <a href="auth/login.php">Sign In</a>
         <?php endif; ?>
       </div>
     </nav>
@@ -105,6 +101,7 @@ $settings = $stmt->fetch();
   </main>
 
   <footer class="footer">
+    <p><a href="pages/contact.php">Contact</a></p>
     <p>&copy; <?= date('Y') ?> Mama Fua Services. All rights reserved.</p>
   </footer>
 </body>
