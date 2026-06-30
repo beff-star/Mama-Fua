@@ -25,7 +25,7 @@ $settings = $stmt->fetch();
     <section class="hero">
       <div class="hero-content">
         <p class="eyebrow">Cleanliness is next to Godliness</p>
-        <h1>Professional cleaning services that bring comfort home.</h1>
+        <h1>Professional cleaning services at an affordable price.</h1>
         <p>From household cleaning to laundry pickup and delivery, our trusted team keeps every space spotless.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="pages/services.php">Book Now</a>
