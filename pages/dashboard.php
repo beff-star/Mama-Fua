@@ -19,10 +19,12 @@ $bookings = $stmt->fetchAll();
   </style>
 </head>
 <body>
-  <div class="dashboard">
-    <h1>Welcome, <?= e($_SESSION['full_name']) ?>!</h1>
-    <p>Manage your bookings and keep track of your service requests.</p>
-    <div class="stats">
+  <?php include_header(); ?>
+  <main class="page-shell">
+    <section class="page-card dashboard">
+      <h1>Welcome, <?= e($_SESSION['full_name']) ?>!</h1>
+      <p>Manage your bookings and keep track of your service requests.</p>
+      <div class="stats">
       <div class="stat"><strong>Upcoming Bookings</strong><div>2</div></div>
       <div class="stat"><strong>Completed Services</strong><div>4</div></div>
       <div class="stat"><strong>Pending Bookings</strong><div>1</div></div>
@@ -41,6 +43,8 @@ $bookings = $stmt->fetchAll();
       </tbody>
     </table>
     <p style="margin-top:1rem;"><a class="btn btn-primary" href="services.php">Book a Service</a></p>
-  </div>
+    </section>
+  </main>
+  <?php include_footer(); ?>
 </body>
 </html>

@@ -20,33 +20,19 @@ $settings = $stmt->fetch();
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <header class="hero">
-    <nav class="navbar">
-      <a class="logo" href="index.php">Mama Fua</a>
-      <div class="nav-links">
-        <a href="index.php">Home</a>
-        <a href="pages/about.php">About</a>
-        <a href="pages/services.php">Services</a>
-        <?php if (is_logged_in()): ?>
-          <a href="pages/dashboard.php">Dashboard</a>
-          <a href="auth/logout.php">Logout</a>
-        <?php else: ?>
-          <a href="auth/login.php">Sign In</a>
-        <?php endif; ?>
-      </div>
-    </nav>
-    <div class="hero-content">
-      <p class="eyebrow">Cleanliness is next to Godliness</p>
-      <h1>Professional cleaning services that bring comfort home.</h1>
-      <p>From household cleaning to laundry pickup and delivery, our trusted team keeps every space spotless.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="pages/services.php">Book Now</a>
-        <a class="btn btn-secondary" href="pages/about.php">Explore Services</a>
-      </div>
-    </div>
-  </header>
-
+  <?php include_header(); ?>
   <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Cleanliness is next to Godliness</p>
+        <h1>Professional cleaning services that bring comfort home.</h1>
+        <p>From household cleaning to laundry pickup and delivery, our trusted team keeps every space spotless.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="pages/services.php">Book Now</a>
+          <a class="btn btn-secondary" href="pages/about.php">Explore Services</a>
+        </div>
+      </div>
+    </section>
     <section class="section">
       <div class="section-heading">
         <p class="eyebrow">Featured Services</p>
@@ -99,10 +85,6 @@ $settings = $stmt->fetch();
       </div>
     </section>
   </main>
-
-  <footer class="footer">
-    <p><a href="pages/contact.php">Contact</a></p>
-    <p>&copy; <?= date('Y') ?> Mama Fua Services. All rights reserved.</p>
-  </footer>
+  <?php include_footer(); ?>
 </body>
 </html>

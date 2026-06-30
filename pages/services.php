@@ -17,11 +17,15 @@ $services = $stmt->fetchAll();
   </style>
 </head>
 <body>
-  <div class="page">
-    <h1>Our Services</h1>
-    <p>Book trusted cleaning services with flexible scheduling.</p>
-    <p>Want to see our package pricing? <a href="pricing.php">View pricing details</a> on this page.</p>
-    <div class="service-list">
+  <?php include_header(); ?>
+  <main class="page-shell">
+    <section class="page-card">
+      <div class="page-title-section">
+        <h1>Our Services</h1>
+        <p>Book trusted cleaning services with flexible scheduling.</p>
+        <p>Want to see our package pricing? <a href="pricing.php">View pricing details</a> on this page.</p>
+      </div>
+      <div class="service-list">
       <?php foreach ($services as $service): ?>
         <article class="service-item">
           <div class="card-image"></div>
@@ -35,7 +39,9 @@ $services = $stmt->fetchAll();
           </div>
         </article>
       <?php endforeach; ?>
-    </div>
-  </div>
+      </div>
+    </section>
+  </main>
+  <?php include_footer(); ?>
 </body>
 </html>

@@ -1,6 +1,11 @@
 <?php
 session_start();
 
+$documentRoot = str_replace('\\', '/', realpath($_SERVER['DOCUMENT_ROOT']));
+$appRoot = str_replace('\\', '/', realpath(__DIR__));
+$basePath = '/' . trim(str_replace($documentRoot, '', $appRoot), '/');
+define('BASE_URL', $basePath === '/' ? '' : $basePath);
+
 $host = 'localhost';
 $dbname = 'mama_fua_services';
 $dbuser = 'root';
@@ -27,8 +32,30 @@ function csrf_field(): string {
     return '<input type="hidden" name="csrf_token" value="' . htmlspecialchars(csrf_token(), ENT_QUOTES, 'UTF-8') . '">';
 }
 
+function site_url(string $path = ''): string {
+    $path = '/' . ltrim($path, '/');
+    return BASE_URL . $path;
+}
+
+function current_path(): string {
+    return parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) ?: '/';
+}
+
+function is_active_link(string $url): bool {
+    $target = parse_url($url, PHP_URL_PATH) ?: '/';
+    return rtrim($target, '/') === rtrim(current_path(), '/');
+}
+
 function e($value): string {
     return htmlspecialchars((string)$value, ENT_QUOTES, 'UTF-8');
+}
+
+function include_header(): void {
+    include __DIR__ . '/includes/header.php';
+}
+
+function include_footer(): void {
+    include __DIR__ . '/includes/footer.php';
 }
 
 function is_logged_in(): bool {

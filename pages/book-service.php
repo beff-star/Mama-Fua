@@ -44,11 +44,13 @@ $services = $stmt->fetchAll();
   </style>
 </head>
 <body>
-  <div class="booking-page">
-    <h1>Book a Service</h1>
-    <?php if (!empty($success)): ?><p style="color:var(--success)"><?= e($success) ?></p><?php endif; ?>
-    <?php if (!empty($error)): ?><p style="color:var(--danger)"><?= e($error) ?></p><?php endif; ?>
-    <form method="post">
+  <?php include_header(); ?>
+  <main class="page-shell">
+    <section class="page-card booking-page">
+      <h1>Book a Service</h1>
+      <?php if (!empty($success)): ?><p style="color:var(--success)"><?= e($success) ?></p><?php endif; ?>
+      <?php if (!empty($error)): ?><p style="color:var(--danger)"><?= e($error) ?></p><?php endif; ?>
+      <form method="post">
       <?= csrf_field() ?>
       <select name="service_id" required>
         <option value="">Select a service</option>
@@ -68,6 +70,8 @@ $services = $stmt->fetchAll();
       </select>
       <button class="btn btn-primary" type="submit">Confirm Booking</button>
     </form>
-  </div>
+    </section>
+  </main>
+  <?php include_footer(); ?>
 </body>
 </html>

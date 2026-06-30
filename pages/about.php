@@ -11,13 +11,19 @@
   </style>
 </head>
 <body>
-  <div class="about-page">
-    <h1>About Mama Fua Services</h1>
-    <p>We are a trusted professional cleaning service provider committed to making homes and offices fresh, safe, and welcoming.</p>
-    <h2>Mission</h2>
-    <p>To deliver dependable cleaning services with excellence and care.</p>
-    <h2>Vision</h2>
-    <p>To be the leading cleaning partner across Nairobi through innovation and reliability.</p>
-  </div>
+  <?php include_header(); ?>
+  <main class="page-shell">
+    <section class="page-card about-page">
+      <div class="page-title-section">
+        <h1>About Mama Fua Services</h1>
+        <p>We are a trusted professional cleaning service provider committed to making homes and offices fresh, safe, and welcoming.</p>
+      </div>
+      <h2>Mission</h2>
+      <p>To deliver dependable cleaning services with excellence and care.</p>
+      <h2>Vision</h2>
+      <p>To be the leading cleaning partner across Nairobi through innovation and reliability.</p>
+    </section>
+  </main>
+  <?php include_footer(); ?>
 </body>
 </html>

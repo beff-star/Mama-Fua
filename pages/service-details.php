@@ -20,13 +20,17 @@ if (!$service) {
   </style>
 </head>
 <body>
-  <div class="detail-page">
-    <div class="detail-banner"></div>
-    <h1><?= e($service['name']) ?></h1>
-    <p><?= e($service['description']) ?></p>
-    <p><strong>Price:</strong> KES <?= number_format($service['price'], 0) ?></p>
-    <p><strong>Estimated Duration:</strong> <?= e($service['duration']) ?></p>
-    <a class="btn btn-primary" href="services.php">Book Service</a>
-  </div>
+  <?php include_header(); ?>
+  <main class="page-shell">
+    <section class="page-card detail-page">
+      <div class="detail-banner"></div>
+      <h1><?= e($service['name']) ?></h1>
+      <p><?= e($service['description']) ?></p>
+      <p><strong>Price:</strong> KES <?= number_format($service['price'], 0) ?></p>
+      <p><strong>Estimated Duration:</strong> <?= e($service['duration']) ?></p>
+      <a class="btn btn-primary" href="services.php">Book Service</a>
+    </section>
+  </main>
+  <?php include_footer(); ?>
 </body>
 </html>

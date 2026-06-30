@@ -15,15 +15,21 @@ $blogs = $stmt->fetchAll();
   </style>
 </head>
 <body>
-  <div class="blog-page">
-    <h1>Cleaning Tips & Insights</h1>
-    <?php foreach ($blogs as $blog): ?>
-      <article class="blog-post">
-        <h2><?= e($blog['title']) ?></h2>
-        <p><strong>Author:</strong> <?= e($blog['author']) ?> | <strong>Category:</strong> <?= e($blog['category']) ?></p>
-        <p><?= e(substr(strip_tags($blog['content']), 0, 220)) ?>...</p>
-      </article>
-    <?php endforeach; ?>
-  </div>
+  <?php include_header(); ?>
+  <main class="page-shell">
+    <section class="page-card blog-page">
+      <div class="page-title-section">
+        <h1>Cleaning Tips & Insights</h1>
+      </div>
+      <?php foreach ($blogs as $blog): ?>
+        <article class="blog-post">
+          <h2><?= e($blog['title']) ?></h2>
+          <p><strong>Author:</strong> <?= e($blog['author']) ?> | <strong>Category:</strong> <?= e($blog['category']) ?></p>
+          <p><?= e(substr(strip_tags($blog['content']), 0, 220)) ?>...</p>
+        </article>
+      <?php endforeach; ?>
+    </section>
+  </main>
+  <?php include_footer(); ?>
 </body>
 </html>

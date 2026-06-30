@@ -23,14 +23,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </style>
 </head>
 <body>
-  <div class="contact-page">
-    <h1>Contact Us</h1>
-    <p>Call or email us anytime. We are available Monday to Saturday, 8:00 AM to 5:00 PM.</p>
-    <p><strong>Phone:</strong> 0743468419</p>
-    <p><strong>Email:</strong> befrineclaire@gmail.com</p>
-    <p><strong>Address:</strong> Umoja, Nairobi</p>
-    <?php if (!empty($success)): ?><p style="color:var(--success)"><?= e($success) ?></p><?php endif; ?>
-    <form method="post">
+  <?php include_header(); ?>
+  <main class="page-shell">
+    <section class="page-card contact-page">
+      <div class="page-title-section">
+        <h1>Contact Us</h1>
+        <p>Call or email us anytime. We are available Monday to Saturday, 8:00 AM to 5:00 PM.</p>
+      </div>
+      <p><strong>Phone:</strong> 0743468419</p>
+      <p><strong>Email:</strong> befrineclaire@gmail.com</p>
+      <p><strong>Address:</strong> Umoja, Nairobi</p>
+      <?php if (!empty($success)): ?><p style="color:var(--success)"><?= e($success) ?></p><?php endif; ?>
+      <form method="post">
       <?= csrf_field() ?>
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
@@ -38,6 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <textarea name="message" rows="5" placeholder="Your message" required></textarea>
       <button class="btn btn-primary" type="submit">Send Message</button>
     </form>
-  </div>
+    </section>
+  </main>
+  <?php include_footer(); ?>
 </body>
 </html>

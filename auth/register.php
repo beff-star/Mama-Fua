@@ -50,20 +50,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </style>
 </head>
 <body>
-  <div class="auth-card">
-    <h2>Create Your Account</h2>
-    <?php if (!empty($error)): ?><p style="color:var(--danger)"><?= e($error) ?></p><?php endif; ?>
-    <form method="post">
-      <?= csrf_field() ?>
-      <div class="form-group"><input type="text" name="full_name" placeholder="Full Name" required></div>
-      <div class="form-group"><input type="text" name="username" placeholder="Username" required></div>
-      <div class="form-group"><input type="email" name="email" placeholder="Email" required></div>
-      <div class="form-group"><input type="text" name="phone" placeholder="Phone"></div>
-      <div class="form-group"><input type="password" name="password" placeholder="Password" required></div>
-      <div class="form-group"><input type="password" name="confirm_password" placeholder="Confirm Password" required></div>
-      <button class="btn btn-primary" type="submit">Register</button>
-    </form>
-    <p style="margin-top:1rem;"><a href="login.php">Already have an account?</a></p>
-  </div>
+  <?php include_header(); ?>
+  <main class="page-shell auth-shell">
+    <section class="auth-card">
+      <h2>Create Your Account</h2>
+      <?php if (!empty($error)): ?><p style="color:var(--danger)"><?= e($error) ?></p><?php endif; ?>
+      <form method="post">
+        <?= csrf_field() ?>
+        <div class="form-group"><input type="text" name="full_name" placeholder="Full Name" required></div>
+        <div class="form-group"><input type="text" name="username" placeholder="Username" required></div>
+        <div class="form-group"><input type="email" name="email" placeholder="Email" required></div>
+        <div class="form-group"><input type="text" name="phone" placeholder="Phone"></div>
+        <div class="form-group"><input type="password" name="password" placeholder="Password" required></div>
+        <div class="form-group"><input type="password" name="confirm_password" placeholder="Confirm Password" required></div>
+        <button class="btn btn-primary" type="submit">Register</button>
+      </form>
+      <p style="margin-top:1rem;"><a href="login.php">Already have an account?</a></p>
+    </section>
+  </main>
+  <?php include_footer(); ?>
 </body>
 </html>

@@ -40,16 +40,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </style>
 </head>
 <body>
-  <div class="auth-card">
-    <h2>Welcome Back</h2>
-    <?php if (!empty($error)): ?><p style="color:var(--danger)"><?= e($error) ?></p><?php endif; ?>
-    <form method="post">
-      <?= csrf_field() ?>
-      <div class="form-group"><input type="email" name="email" placeholder="Email" required></div>
-      <div class="form-group"><input type="password" name="password" placeholder="Password" required></div>
-      <button class="btn btn-primary" type="submit">Login</button>
-    </form>
-    <p style="margin-top:1rem;"><a href="register.php">Create an account</a></p>
-  </div>
+  <?php include_header(); ?>
+  <main class="page-shell auth-shell">
+    <section class="auth-card">
+      <h2>Welcome Back</h2>
+      <?php if (!empty($error)): ?><p style="color:var(--danger)"><?= e($error) ?></p><?php endif; ?>
+      <form method="post">
+        <?= csrf_field() ?>
+        <div class="form-group"><input type="email" name="email" placeholder="Email" required></div>
+        <div class="form-group"><input type="password" name="password" placeholder="Password" required></div>
+        <button class="btn btn-primary" type="submit">Login</button>
+      </form>
+      <p style="margin-top:1rem;"><a href="register.php">Create an account</a></p>
+    </section>
+  </main>
+  <?php include_footer(); ?>
 </body>
 </html>
